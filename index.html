@@ -1,47 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" />
     <title>Gustavo&Gabriel</title>
-</head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+      @import url("https://fonts.cdnfonts.com/css/crash-a-like");
+      body {
+        background-image: linear-gradient(
+          0deg,
+          rgba(7, 2, 98, 1) 6%,
+          rgba(9, 61, 121, 1) 33%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+      }
 
-<body>
-    <h1>Gucegu gabriel</h1>
-    <div>
-        <label> Nome: </label>
-        <input placeholder="Insere" type="text" name="nome" id="nome">
-    </div>
-    <div>
-        <label> Idade: </label>
-        <input placeholder="Insere" type="number" name="idade" id="idade">
-    </div>
-    <div>
-        <label> Qual perso você é: </label>
-        <input placeholder="Insere" type="text" name="animal" id="animal">
-    </div>
-    <div>
+      h1 {
+        font-family: "Crash-a-Like", "Luckiest Guy", sans-serif;
+        color: yellow;
+        font-size: 50px;
+        text-align: center;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+      }
+
+      .divide_por_2 {
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto auto;
+      }
+      .a {
+        right: 20%;
+        position: relative;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(153, 177, 179, 0.582);
+        padding: 12px 18px;
+        border-radius: 16px;
+        border: 1px solid #eee;
+        gap: 8px;
+      }
+
+      #table {
+        display: block;
+
+        height: 100px;
+        width: 100%;
+        overflow: scroll;
+        background-color: rgb(59, 119, 172);
+        border: 1px solid #ccc;
+        overflow: scroll;
+        max-height: max-content;
+      }
+
+      thead,
+      tbody tr {
+        display: table;
+        font-family: "Luckiest Guy", sans-serif;
+
+        width: 100%;
+        table-layout: fixed; /* even columns width , fix width of table too*/
+      }
+      thead {
+        width: calc(100% - 1em);
+        /* scrollbar is average 1em/16px width, remove it from thead width */
+        background-color: aqua;
+        font-family: "Crash-a-Like", "Luckiest Guy", sans-serif;
+      }
+      table {
+        width: 400px;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #cfe40a;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8b910;
+      }
+      .input-nml {
+        display: flex;
+        flex-direction: column;
+      }
+      .input-nml > label {
+        font-family: "Crash-a-Like", "Luckiest Guy", sans-serif;
+        text-align: center;
+        background: linear-gradient(
+          0deg,
+          rgb(199, 193, 15) 6%,
+          rgb(255, 98, 0) 100%
+        );
+        font-size: 24px;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+      }
+      .input-nml > input,
+      .input-nml > select {
+        font-family: "Luckiest Guy", sans-serif;
+        background-color: rgba(0, 255, 255, 0.525);
+        color: #000;
+        outline: transparent;
+        border: 1px solid #000;
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+      .input-nml > select {
+        background-color: rgba(0, 255, 255, 0.525);
+        color: #000;
+        outline: transparent;
+        border: 1px solid #000;
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+      .btns {
+        display: flex;
+        gap: 12px;
+      }
+      .btns > button {
+        background: linear-gradient(
+          0deg,
+          rgb(199, 193, 15) 0%,
+          rgb(255, 98, 0) 100%
+        );
+        font-family: "Crash-a-Like", "Luckiest Guy", sans-serif;
+        font-size: 18px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 12px 10px;
+        border: 2px solid #16161686;
+        box-shadow: 6px 6px 0 black;
+        transform: skew(-15deg);
+        transition: ease-in-out 200ms;
+      }
+      .btns > button:hover {
+        scale: 1.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Guceriel kart</h1>
+    <div class="divide_por_2">
+      <div>
+        <div class="form">
+          <div class="input-nml">
+            <label> Nome: </label>
+            <input
+              placeholder="Insere"
+              type="text"
+              name="nome"
+              id="nome"
+              maxlength="10"
+              required
+            />
+          </div>
+          <div class="input-nml">
+            <label> Idade: </label>
+            <input
+              placeholder="Insere"
+              type="number"
+              name="idade"
+              id="idade"
+              maxlength="3"
+              required
+            />
+          </div>
+          <div class="input-nml">
+            <label> Qual personagem você é: </label>
+            <select name="personagem" id="personagem"></select>
+          </div>
+          <div class="input-nml">
+            <label> Time & Karts: </label>
+            <select id="karts" name="karts">
+              <!-- <option value="volvo" selected>Time bandicoot</option> -->
+            </select>
+          </div>
+          <div class="btns">
+            <button onclick="MandaFrente()">
+              <span>Tacar na Frente</span>
+            </button>
+            <button id="btn_enviar">Tacar no Final</button>
+            <button onclick="deletarUltimo()">Deletar o ultimo</button>
+            <button onclick="deletarPrimeiro()">Deletar o primeiro</button>
+          </div>
+        </div>
+        <br />
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Personagem</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="table"></tbody>
+        </table>
+      </div>
+      <div>
         <img src="" alt="karts" id="kart_img" />
-        <label> Karts: </label>
-        <select id="karts" name="karts">
-            <!-- <option value="volvo" selected>Time bandicoot</option> -->
-        </select>
+        <img src="" alt="personagem" id="personage_img" />
+      </div>
     </div>
-    <div>
-        <label> Time: </label>
-        <select id="time" name="time">
-            <option value="volvo" selected>Time bandicoot</option>
-            <option value="saab">Time cortex</option>
-            <option value="fiat"> Time oxide</option>
-            <option value="audi">Time trance</option>
-        </select>
-    </div>
-    <div>
-        <button>Start</button>
-    </div>
+
 
     <!--
         form tem que ter:
@@ -51,7 +237,192 @@
         - Time
         - Qual animal vc é
      -->
-    <script src="script.js"></script>
-</body>
+    <script>
+      let nome = document.getElementById("nome");
+      let idade = document.getElementById("idade");
+      let personagem = document.getElementById("personagem");
+      let karts = document.getElementById("karts");
+      let time = document.getElementById("time");
+      let kart_img = document.getElementById("kart_img");
+      let personage_img = document.getElementById("personage_img");
+      let btn = document.getElementById("btn_enviar");
+      let table = document.getElementById("table");
 
+      let kartIndex;
+      let personagemList;
+      let Racists = [];
+      const AcharKart = (value) =>
+        KartsList.find((element) => element.url == value);
+      const AcharKartNome = (value) => {
+        let index = KartsList.find((element) => element.url == value);
+        return index.nome;
+      };
+
+      const AcharPersonagem = (time) =>
+        TimesList.find((element) => element.nome === time);
+      const AcharPersonagemList = (time) => {
+        let index = TimesList.find((element) => element.nome === time);
+        return index.PersonagemList;
+      };
+      const AcharPersonagemNome = (value) => {
+        let index = personagemList.find((element) => element.url === value);
+        return index.nome;
+      };
+
+      function setarCoisas() {
+        kartIndex = AcharKart(karts.value);
+        console.log(kartIndex);
+        personagemList = AcharPersonagemList(kartIndex.nome);
+        console.log(personagemList);
+        personagem.innerHTML = "";
+        for (let i = 0; i <= personagemList.length - 1; i++) {
+          personagem.innerHTML += `<option value='${personagemList[i]?.url}'>${personagemList[i]?.nome}</option> <br>`;
+        }
+        personage_img.src = personagem?.value;
+        kart_img.src = karts.value;
+      }
+
+      function setarTabela() {
+        table.innerHTML = "";
+        for (let i = 0; i <= Racists.length - 1; i++) {
+          table.innerHTML += `  <tr>
+    <td>${Racists[i].nome}</td>
+    <td>${Racists[i].personagem}</td>
+    <td>${Racists[i].kart}</td>
+  </tr>`;
+        }
+      }
+
+      const KartsList = [
+        {
+          nome: "Time Nitrus oxide",
+          url: "https://i.pinimg.com/originals/cd/ea/09/cdea09d7b733181b9d8d8e4ee942b3fa.png",
+        },
+        {
+          nome: "Time cortex",
+          url: "https://www.models-resource.com/resources/sheet_icons/14/13216.png?updated=1634473317",
+        },
+        {
+          nome: "Time bandicoot",
+          url: "https://www.pngkit.com/png/full/359-3595834_team-bandicoot-kart-crash-bandicoot-nitro-kart-car.png",
+        },
+        {
+          nome: "Time trance",
+          url: "https://www.models-resource.com/resources/big_icons/14/13222.png?updated=1634473689",
+        },
+      ];
+
+      const TimesList = [
+        {
+          nome: "Time bandicoot",
+          PersonagemList: [
+            {
+              nome: "Crash Bandicoot",
+              url: "https://www.pngmart.com/files/2/Crash-Bandicoot-PNG-Image.png",
+            },
+            {
+              nome: "Crunch Bandicoot",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/c/c6/Crash_Tag_Team_Racing_Crunch_Bandicoot.png/revision/latest?cb=20200715002411&path-prefix=pt",
+            },
+            {
+              nome: "Coco  Bandicoot",
+              url: "https://static.wikia.nocookie.net/liberproeliis/images/b/b8/1577237175813.png/revision/latest?cb=20191225012552&path-prefix=pt-br",
+            },
+          ],
+        },
+        {
+          nome: "Time cortex",
+          PersonagemList: [
+            {
+              nome: "Neo cortex",
+              url: "https://static.wikia.nocookie.net/crash-bandicoot/images/8/8a/Neo_Cortex.png/revision/latest?cb=20161206020529&path-prefix=pt-br",
+            },
+            {
+              nome: "Tiny tiger",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/5/51/Crash_2-CTR_Tiny_Tiger.png/revision/latest?cb=20200711041423&path-prefix=pt",
+            },
+            {
+              nome: "N gin",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/c/c1/Crash_Bandicoot_2_Cortex_Strikes_Back_Doctor_N._Gin_Promo.png/revision/latest?cb=20181214183338&path-prefix=pt-br",
+            },
+          ],
+        },
+        {
+          nome: "Time Nitrus oxide",
+          PersonagemList: [
+            {
+              nome: "Nitrus oxide",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/0/0a/NFOxideSaucer.png/revision/latest?cb=20200719004902&path-prefix=pt",
+            },
+            {
+              nome: "zam",
+              url: "https://static.wikia.nocookie.net/crashban/images/3/35/ZamCTRNF.png/revision/latest?cb=20190912210240",
+            },
+            {
+              nome: "zem",
+              url: "https://static.wikia.nocookie.net/crashban/images/e/ed/ZemCTRNF.png/revision/latest?cb=20190912210323",
+            },
+          ],
+        },
+        {
+          nome: "Time trance",
+          PersonagemList: [
+            {
+              nome: "N. trance",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/f/f4/N._Trance.png/revision/latest?cb=20181226152325&path-prefix=pt-br",
+            },
+            {
+              nome: "Polar",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/e/ea/Polar_Crash_Bandicoot_N._Sane_Trilogy.png/revision/latest?cb=20181228125817&path-prefix=pt",
+            },
+            {
+              nome: "Dingodile",
+              url: "https://static.wikia.nocookie.net/crashbandicoot/images/d/d1/Crash_Bandicoot_N._Sane_Trilogy_Dingodile.png/revision/latest?cb=20181218145728&path-prefix=pt-br",
+            },
+          ],
+        },
+      ];
+
+      for (let i = 0; i <= KartsList.length - 1; i++) {
+        karts.innerHTML += `<option value='${KartsList[i]?.url}'>${KartsList[i]?.nome}</option> <br>`;
+        //   console.log(KartsList[i]);
+      }
+
+      setarCoisas();
+
+      karts.addEventListener("change", setarCoisas);
+      personagem.addEventListener("change", () => {
+        personage_img.src = personagem?.value;
+      });
+
+      btn.addEventListener("click", () => {
+        Racists.push({
+          nome: nome?.value,
+          idade: idade?.value,
+          personagem: AcharPersonagemNome(personagem?.value),
+          kart: AcharKartNome(karts?.value),
+        });
+        console.log(Racists);
+        setarTabela();
+      });
+
+      function deletarUltimo() {
+        Racists.pop();
+        setarTabela();
+      }
+      function deletarPrimeiro() {
+        Racists.shift();
+        setarTabela();
+      }
+      function MandaFrente() {
+        Racists.unshift({
+          nome: nome?.value,
+          idade: idade?.value,
+          personagem: AcharPersonagemNome(personagem?.value),
+          kart: AcharKartNome(karts?.value),
+        });
+        setarTabela();
+      }
+    </script>
+  </body>
 </html>
